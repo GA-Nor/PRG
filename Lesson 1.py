@@ -3,7 +3,7 @@ This will be about
 variables and strings
 mostly
 """
-
+"""
 #Variables and strings
 print("Print dette")
 
@@ -76,7 +76,7 @@ print(number1+number2)
 area = number1*number2
 #rectangle area
 print("Area: ",area,"m2")
-
+"""
 
 
 # TASK
