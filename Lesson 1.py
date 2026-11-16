@@ -37,10 +37,10 @@ print(storBokstav)
 
 #Concatenation, combine strings
 
-"""
+
 split()	Split a string into a list	"a,b,c".split(",")	['a','b','c']
 join()	Join a list into a string	",".join(['a','b','c'])	"a,b,c"
-"""
+
 #Create a string to split
 #stringToSplit = "Dette er en test"
 #Split by space, returns a list
