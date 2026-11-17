@@ -52,6 +52,20 @@ for game in clean_games:
     print(game)
 
 
+
+#FOR LOOP (With counter)
+print("\nCounter Example")
+#Print the same list of games, but adding an incrementing counter for each element.
+#Initialize a counter variable to 1, count starts at 1
+counter = 1
+#For every game in the list of cleaned games, print the game with a number in front of it, and increase the counter by 1
+for game in clean_games:
+
+    #Using an "f-string" to include variables into printed text. (optionally: print(counter,"- ",game))
+    print(f"{counter}- {game}")
+    #Increasae the counter for each loop (iteration), so the next printed item will be 1 higher
+    counter += 1
+    
 """
 
 #IF / ELIF / ELSE
@@ -85,28 +99,7 @@ print("*" * 40)
 
 
 
-#FOR-EACH LOOP
 
-print("\nPrint each game in the list using a for-each loop:")
-
-#For every game in the list of cleaned games, print the game
-for game in clean_games:
-    print(game)
-
-
-#FOR LOOP (With counter)
-
-print("\nCounter Example")
-
-#Initialize a counter variable to 1, count starts at 1
-counter = 1
-
-#For every game in the list of cleaned games, print the game with a number in front of it, and increase the counter by 1
-for game in clean_games:
-
-    print(f"{counter}. {game}")
-
-    counter += 1
 
 
 
