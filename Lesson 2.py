@@ -15,10 +15,13 @@ Topics:
 ====================================================
 INPUT AND STRING MANIPULATION
 ====================================================
+"""
+
+
 #Store users name in a variable. The order matters, first method (strip()) runs before the next (capitalize())
 name = input("Enter your name: ").strip().capitalize()  
 print("Hi "+name)
-"""
+
 
 #Stores the users games as a string
 games = input("Enter your favourite games (separated by comma): ")
@@ -63,18 +66,19 @@ for game in clean_games:
 
     #Using an "f-string" to include variables into printed text. (optionally: print(counter,"- ",game))
     print(f"{counter}- {game}")
-    #Increasae the counter for each loop (iteration), so the next printed item will be 1 higher
+    #Increases the counter for each loop (iteration), so the next printed item will be 1 higher
     counter += 1
     
-"""
 
 #IF / ELIF / ELSE
+lengthOfList = len(clean_games)
+print(f"The length of the list is: {lengthOfList}")
 
 # if the length of the list is less than 3, print a message
-if len(clean_games) < 3:
+if lengthOfList < 3:
     print("You need more favourite games!")
 # if the length of the list is between 3 and 5, print a different message
-elif len(clean_games) <= 5:
+elif lengthOfList <= 5:
     print("Nice collection!")
 # if the length of the list is greater than 5, print a different message, since this is the last condition, we can use else instead of elif
 else:
@@ -84,23 +88,19 @@ else:
 
 
 #STRING ALIGNMENT
-
+name = input("Input name: ")
+print(f"Number of chars in name: {len(name)}")
 #Print a new line and a border of 40 asterisks
 print("\n" + "*" * 40)
 
 #Create a title using the users name, and convert it to uppercase
 title = f"{name.upper()}'S FAVOURITE GAMES"
 
-#Print the title, centered, with a border of asterisks on either side
+#Print the title, centered (relative to 38 character width), with a border of asterisks on either side
 print("*" + title.center(38) + "*")
 
 #Print another border of 40 asterisks
 print("*" * 40)
-
-
-
-
-
 
 
 
@@ -127,18 +127,23 @@ def display_game(number, game):
 
     entry = f"{number}. {game}"
 
-    print("* " + entry.ljust(36) + "*")
+    print("* " + entry.ljust(38) + "*")
 
 
 
 print("\nFunction Demonstration")
 
+
 #Call the border function
 print_border()
 #Call the create_title function, passing in the users name, and print the result
-print("*" + create_title(name).center(38) + "*")
+#Optional: Can store the title in a variable, or use the function directly in the print statement.
+titleName = create_title(name)
+print("*" + titleName.center(38) + "*")
 #Call the border function again
 print_border()
+
+
 
 #initialize the counter variable to 1, count starts at 1
 counter = 1
@@ -154,7 +159,6 @@ print_border()
 
 
 
-"""
 
 #==== When creating functions, be aware of existing function names ====
 
