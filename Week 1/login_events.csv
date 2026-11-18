@@ -1,0 +1,13 @@
+username,ip_address,success,failed_attempts,risk_score
+" Alice ",192.168.1.10,TRUE,0,0.12
+"bob ",10.0.0.12,false,1,0.30
+" CHRIS",192.168.1.14,False,4,0.76
+"dina",172.16.0.20,true,0,0.91
+" Eve ",203.0.113.5,FALSE,5,0.95
+"FRED",192.168.1.30,True,0,0.18
+" alice",192.168.1.10,false,2,0.54
+"Grace ",198.51.100.22,false,3,0.80
+"henry",10.0.0.7,TRUE,0,0.22
+"Isabel",203.0.113.19,False,1,0.88
+"JACK",192.0.2.15,false,3,0.45
+"kate",192.168.1.20,true,0,0.61
