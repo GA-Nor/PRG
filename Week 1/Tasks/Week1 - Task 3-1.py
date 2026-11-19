@@ -42,10 +42,38 @@ suspicious_ips = [
     "10.0.0.99"
 ]
 
+ipa = []
+with open("network_ips.txt", "r") as file:
+
+        for line in file:
+            ip = line.strip()
+
+            if ip != "":
+                ipa.append(ip)
+
+ipsusp = []
+with open("suspicious_ips.txt", "r") as file:
+
+        for line in file:
+            ip = line.strip()
+
+            if ip != "":
+                ipsusp.append(ip)
+
+print(len(ipa))
+print(len(ipsusp))
 # TODO 1: Create a counter for suspicious IP addresses.
+#counter
 
 # TODO 2: Use a for loop to examine the addresses in ip_addresses.
 
-# TODO 3: Use if/else and print SAFE or SUSPICIOUS.
+#use a for loop that goes through each ip address
 
-# TODO 4: Update and print the suspicious counter.
+# TODO 3: Use if/else and print SAFE or SUSPICIOUS, increase counters.
+    #Condition: check if the current ip address is in the list of suspicious ip addresses
+        #print the ip address, with the text "Suspicious"
+        # increase the suspicious counter by 1
+    #if its not the case, print the ip address and the text "Safe"
+
+
+#Print the total number of suspicious ip addresses. 

@@ -44,8 +44,28 @@ Print `MEETS ADVANCED RULE` or `DOES NOT MEET ADVANCED RULE` for each record, fo
 import csv
 
 
-# TODO 1: Write a function named check_password(password).
-# It should return True if the password is at least 10 characters long.
+#TODO 1: Write a function named def check_password(password):
+#It should return True if the password is at least 10 characters long.
+    #init bool vars 
+    #is the password long enough 
+    #does it have uppercase
+    #does it have lowercase
+    #does it have a symbol
+    
+    #create a length criteria variable, where we will assign a minimum length
+    
+    #create a variable that stores the len(th) of the password passed to this function
+    #Condition: if the password length is longer or equal to the length criteria, set the appropriate bool to true
+    
+    #use a for-loop to go through each character in the password (think of a string as a "list" of characters)
+        # if the current character is upper (case), set the appropriate bool to true
+        # if the current character is lower (case), set the appropriate bool to true
+        
+        #if the current character is equal to "." or "!" or "-", set the appropriate bool to true
+        #if its instead equal to "_" or "#" or "?", also set the appropriate bool to true
+        
+    #Condition: if the password is long enough, and has uppercase and has lowercase and has a symbol, return True (this ends the function)
+    #if the function has not ended (returned) by now, return false
 
 
 strong_count = 0
@@ -55,17 +75,31 @@ print("PASSWORD SECURITY AUDIT")
 print("-----------------------")
 
 # TODO 2: Open passwords.csv and create a csv.DictReader.
-
+with open("passwords.csv", "r", newline="", encoding="utf-8") as file:
+    reader = csv.DictReader(file)
+    
 # TODO 3: Use a for loop to read each record.
 # Clean each username and get the password.
 # Call check_password(password).
 # Print STRONG or WEAK, and update the appropriate counter.
 
+    for row in reader:
+        #assign the username value of the current row to a variable
+        #string whitespaces, make first character uppercase
+        
+        #assign the password value of the current row to a variable
+        
+        #create a passwordIsStrongEnough variable, that will store (a boolean value), the result of our function check_password(). Pass the password we just extracted
+        
+        #Condition: if the password is strong enough, True
+            #print the username and the text "Strong"
+            #increase the strong_count by 1
+        #if it isnt
+            #print the username and the text "Weak"
+            #increase the weak_count by 1
+
+
 print()
 print("SUMMARY")
 # TODO 4: Print both counters.
 
-# OPTIONAL CHALLENGE
-# Write a separate check_advanced_password(password) function.
-# Requirements: >16 characters; both upper/lowercase; special character.
-# Keep the code simple: use a for loop and explicit if statements.

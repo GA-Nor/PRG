@@ -17,20 +17,20 @@ def check_password(password):
 
     for character in password:
         if character.isupper():
-            has_uppercase = True
+            hasUppercase = True
 
         if character.islower():
             hasLowercase = True
 
         if character == "." or character == "!" or character == "-":
-            has_symbol = True
+            hasSymbol = True
         elif character == "_" or character == "#" or character == "?":
-            has_symbol = True
+            hasSymbol = True
 
     if longEnough == True:
-        if has_uppercase == True:
+        if hasUppercase == True:
             if hasLowercase == True:
-                if has_symbol == True:
+                if hasSymbol == True:
                     return True
 
     return False
