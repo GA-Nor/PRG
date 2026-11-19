@@ -42,26 +42,7 @@ suspicious_ips = [
     "10.0.0.99"
 ]
 
-ipa = []
-with open("network_ips.txt", "r") as file:
 
-        for line in file:
-            ip = line.strip()
-
-            if ip != "":
-                ipa.append(ip)
-
-ipsusp = []
-with open("suspicious_ips.txt", "r") as file:
-
-        for line in file:
-            ip = line.strip()
-
-            if ip != "":
-                ipsusp.append(ip)
-
-print(len(ipa))
-print(len(ipsusp))
 # TODO 1: Create a counter for suspicious IP addresses.
 #counter
 
