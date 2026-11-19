@@ -1,5 +1,5 @@
 
-# Task 2 Example solution
+# Example solution
 #prints a border of asterisks
 def print_border():
     print("*" * 50)

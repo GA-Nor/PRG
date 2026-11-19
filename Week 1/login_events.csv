@@ -1,5 +1,5 @@
 username,ip_address,success,failed_attempts,risk_score
-" Alice ",192.168.1.10,TRUE,0,0.12
+" Ålice ",192.168.1.10,TRUE,0,0.12
 "bob ",10.0.0.12,false,1,0.30
 " CHRIS",192.168.1.14,False,4,0.76
 "dina",172.16.0.20,true,0,0.91

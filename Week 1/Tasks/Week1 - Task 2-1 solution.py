@@ -1,10 +1,10 @@
-# Task 1 Example solution
+#Example solution
 #prints a border of asterisks
 def print_border():
     print("*" * 40)
 
 #cleans the movie title by removing leading/trailing whitespace and capitalizing the first letter of each word
-def clean_title(movie):
+def clean_title(movie:str):
     return movie.strip().title()
 
 #displays the movie title with a number and asterisks on either side
@@ -29,7 +29,6 @@ clean_movies = []
 
 #for loop to clean the movie titles and add them to a new list
 for movie in movie_list:
-
     movie = clean_title(movie)
 
     if movie != "":

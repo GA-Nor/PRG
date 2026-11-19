@@ -6,7 +6,7 @@ import csv
 # - number of failed attempts
 # - risk score
 #We usually add functions at the top of the script to make sure they are defined before they are used.
-def review_login(loginSuccess, failedAtt, riskSc):
+def review_login(loginSuccess:bool, failedAtt:int, riskSc:float):
     tooManyFailures = False
     highRisk = False
     
@@ -36,8 +36,8 @@ print("---------------------")
 #the keyword "with" means that the file will be automatically closed after the indented block of code is executed.
 with open("login_events.csv", "r", encoding="utf-8") as file:
     reader = csv.DictReader(file)
-    
     #print the headers for the CSV file.
+    """
     for header in reader.fieldnames:
         print(header)
     
@@ -46,13 +46,17 @@ with open("login_events.csv", "r", encoding="utf-8") as file:
     for row in reader:
         print(row)
         break
+    for index, row in enumerate(reader, start=1):
+        row["index"] = index
+        print(row)
+    """
     
     for row in reader:        
         #Since this loop goes through each entry, and each entry is 1 event, increment the number of events by 1 pr iteration through the loop
         totalEvents += 1
         
         # Step 1: Print the username instead of the whole row.
-        print(row["username"].strip().title())
+        #print(row["username"])
         
         # Step 3: Store the username in a variable.
         # Step 4: Clean it with strip() and title().
@@ -73,7 +77,7 @@ with open("login_events.csv", "r", encoding="utf-8") as file:
 
         # Step 8: Add an if/else to print SUCCESS or FAILED.
         status = ""
-        if(success):
+        if(success == True):
             status = "SUCCESS"
         else:
             status = "FAILED"
@@ -96,8 +100,9 @@ with open("login_events.csv", "r", encoding="utf-8") as file:
         #print risk score and alert status
         print(f"Users: {username} | Status: {status} | Failed attempts: {failedAttempts}")
         print(f"Risk score: {riskScore} | Alert: {alert_text}")
+
         
-              
+        
 
 # Print summary numbers.
 # total events
@@ -121,7 +126,7 @@ with open("login_report.txt", "w", encoding="utf-8") as file:
         writer.writerow([user])
     
     
-"""
+"""   
 
 
 """

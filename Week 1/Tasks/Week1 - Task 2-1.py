@@ -1,5 +1,5 @@
 """
-TASK 1 - Movie Collection Display
+TASK - Movie Collection Display
 
 1. Ask for the user's name.
 2. Ask for favourite movies separated by commas.
