@@ -1,6 +1,12 @@
+from pathlib import Path
+
+
+data = "alice,15;BOB,3;charlie,22;DAVID,8;eve,12"
+
+
 def process_user(record):
     name, login_count = record.split(",")
-    return name.strip().title(), int(login_count)
+    return name.strip().title(), int(login_count.strip())
 
 
 def calculate_statistics(users):
@@ -22,20 +28,29 @@ def calculate_statistics(users):
 
 
 def load_login_data(filename):
-    users = []
+    loaded_users = []
     with open(filename, "r") as file:
         for line in file:
             for record in line.strip().split(";"):
-                if record:
+                if record.strip():
                     name, login_count = process_user(record)
-                    users.append([name, login_count])
-    return users
+                    loaded_users.append([name, login_count])
+    return loaded_users
 
 
-# Read each record and save the user's name and login count.
-users = load_login_data("logins.csv")
+# Build the nested list from the starting data.
+users = []
+for record in data.split(";"):
+    name, login_count = process_user(record)
+    users.append([name, login_count])
 
-# Search for a username without case sensitivity.
+# Add records from both files without duplicating the same user record.
+folder = Path(__file__).resolve().parent
+for filename in ("logins.txt", "logins.csv"):
+    for loaded_user in load_login_data(folder / filename):
+        if loaded_user not in users:
+            users.append(loaded_user)
+
 search_name = input("Enter a username to search for: ").strip().lower()
 found_user = None
 for user in users:
@@ -48,20 +63,16 @@ if found_user:
 else:
     print("User not found:", search_name)
 
-# Calculate the highest, lowest, average, and total login counts.
 total_logins = 0
 for user in users:
     total_logins += user[1]
 
 highest, lowest, average = calculate_statistics(users)
 
-# Print the users and their login counts in a table.
 print("Name".ljust(15) + " | " + "Logins".rjust(10))
 print("-" * 30)
 for user in users:
-    name = user[0]
-    login_count = user[1]
-    print(name.ljust(15) + " | " + str(login_count).rjust(10))
+    print(user[0].ljust(15) + " | " + str(user[1]).rjust(10))
 
 print("Total:", total_logins)
 print("Highest:", highest)
