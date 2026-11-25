@@ -139,10 +139,6 @@ print("Length of list: ", len(tomListe))
 
 
 #go through tuple, for i in tuple, print each element in the tuple
-for i in 
-
-
-
 #return function returning tuple, like yesterday
 
 
@@ -170,11 +166,49 @@ print("Name: ", students[0][3])
 
 #Task
 # Create a list of students(tuples) and scores for 3 tests. Example: students = [("Alice", 95, 92, 88)]
-# Create a function that takes a list as a paramenter, and prints each student and the score for each test (Example: Test 1: 95, Test 2: 92, Test 3: 88)
-# Create a function to add students, the function should take a Name, and 3 scores, and add it to the list
-# Create a function that takes a list, and prints a sorted list based on name
-# Create a function that finds a student by name, and returns the name and their grades as a tupple, assigning them to variables (name, g1, g2, g3 = "return value of function). Then print the variables
+students = [("Alice", 95, 92, 88), ("Bob", 78, 85, 82), ("Charlie", 88, 90, 85)]
 
-students = [("Alice", 95, 92, 88)]
-def print_students()
+# Create a function that takes a list as a paramenter, and prints each student and the score for each test (Example: Test 1: 95, Test 2: 92, Test 3: 88)
+def print_students(lst):
+    for student in lst:
+        print(student)
+
+print_students(students)
+
+# Create a function to add students, the function should take a Name, and 3 scores, and add it to the list
+def add_student(lst, name, s1, s2, s3):
+    lst.append((name, s1, s2, s3))
+    return lst
+
+students= add_student(students, "David", 90, 85, 88)
+
+print_students(students)
+
+# Create a function that takes a list, and prints a sorted list based on name
+def sort_by_name(lst):
+    return sorted(lst)
+
+students = sort_by_name(students)
+
+print_students(students)
+
+
+# Create a function that finds a student by name, and returns the name and their grades as a tupple, 
+# assigning them to variables (name, g1, g2, g3 = "return value of function). Then print the variables
+# Remember that the "nested" list looks like:
+#  ---------[0]---------  ---------[1]-------  ---------[2]-----------
+#     [0]   [1] [2]  [3]    [0]   [1] [2] [3]     [0]     [1] [2]  [3]
+# [("Alice", 95, 92, 88), ("Bob", 78, 85, 82), ("Charlie", 88, 90, 85)]
+def find_student(lst, name):
+    #s is the current element in the out list, ex: ("Alice", 95, 92, 88)
+    for s in lst:
+        #[0] is the Name, Ex "Alice"
+        if s[0] == name:
+            #If the name matches, return the entire object s. (which is: ("Alice", 95, 92, 88))
+            return s
+
+name, g1, g2, g3 = find_student(students, "Alice")
+print(name, g1, g2, g3)
+
+
     
