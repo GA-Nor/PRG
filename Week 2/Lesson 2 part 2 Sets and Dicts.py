@@ -12,24 +12,51 @@ COLLECTIONS PART 2
 
 
 # Skills example, team a+b {Charlie}
-
+setA = {"Alice", "Bob", "Charlie", "Alice", "Jensen"}
+print("Set 1: ",setA)
+setB = {"Bob", "Jensen", "Huang"}
 #print the contents of each set.
+print("Set 2: ",setB)
 
 # Find element in set, if var in set, print
+if "Alice" in setA:
+   print("Alice is in: ", setA)
 
 
 #Set Operations
 #intersection example, SetA.intersection(SetB) - overlap
+setC = setA.intersection(setB) 
+print("Elements that are in both set A and set B: ", setC)
+
 #difference example, SetA.difference(SetB) - unique to A
+setD = setA.difference(setB)
+print("These elements are unique to A: ", setD)
+
 #union example, SetA.union(SetB) - all items, no duplicates
+setE = setA.union(setB)
+print("The union of Set A and Set B: ", setE)
 
 
 #Convert lists or tuples to sets to find overlap, this removes duplicate entries
+names = ["Alice", "Alice", "Bob", "Jensen"]
+friends = ["Bob", "Charlie", "Charlie"]
+
+print("List Names: ", names)
+print("List Friends: ", friends)
+
+set_names = set(names)
+set_friends = set(friends)
+
+print("Set Names: ", set_names)
+print("Set Friends: ", set_friends)
 
 #add item to set using .add()
+set_names.add("Huang")
+print("New set values after adding Bob: ", set_names)
 
 #remove item using .remove()
 setA = {"Alice", "Bob"}
+
 
 
 
@@ -55,30 +82,49 @@ setA = {"Alice", "Bob"}
 # ==================================================
 
 # Example, {Username: "Real name",}
-users = {"user1": "Alice", "user2": "Bob"}
+users = {"user1": "Alice", "user1": "Bob"}
+print(users)
 
+#Add new user, cant use duplicate keys
+users["user3"] = "Charlie"
+print(users)
 
 #print each username and name, for un, n in dict.items()
-
+for k,v in users.items():
+   print("Username: ",k, " Name: ",v)
 
 
 #check if key exists, if user1 in users, print the value of user1
+if "user1" in users.keys():
+   print(users["user1"])
+
 
 #Check if value exists, if n in .values()
+if "Jensen" in users.values():
+   print("Bob is in the dictionary")
 
-
+"""
 # search by value in users, for each, get the key and value in items, if value == string, print Key or Value
 # when comparing strings, helpful to use .lower()
-
+for k, v in users:
+   if v == "Bob":
+      print(k)
 
 #Convert keys and values to list (list(dict.keys()/values()))
+listOfKeys = list(users.keys())
+listOfvalues = list(users.values())
 
+print("List of keys: ", listOfKeys)
+print("List of values: ", listOfvalues)
 
 #add entry to dict, dict[key] = value, {}, can also overwrite existing key
 
+"""
 
 #May be good to check that the Key doesnt exists first..
 #if the key is not in dict, add [user3] with value David
+
+
 
 
 

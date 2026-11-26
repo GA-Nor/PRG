@@ -18,12 +18,22 @@ Topics:
 
 
 # Check if input is empty, print an error message, if OK greet user
+"""
+inputVar = input("Enter name: ")
 
-
+if inputVar == "":
+    print("ERROR: String cant be empty.")
+else:
+    print(f"Welcome {inputVar}")
+"""
 
 # Lets say we're taking Age as a variable, check if input is a number, 
 # is it a digit, convert to int if valid, if not, print error
-
+inputVar = input("Enter Age: ")
+if inputVar.isdigit():
+    print("Your age is: ", inputVar)
+else:
+    print("Not a number")
 
 
 """
@@ -42,6 +52,15 @@ NameError for undefined variables.
 """
 Use try-except and ValueError to catch errors when converting types, like str to int or float
 """
+try:
+    var = "50"
+    tall = int(var)
+    print("String converted to number: ", var)
+except ValueError:
+    print("String could not be converted to an int: ", var)
+
+
+
 
 # ValueError occurs when converting incompatible data types
 # Try to convert a string to int, except if we get a ValueError, print error
@@ -58,6 +77,24 @@ Use try-except and ValueError to catch errors when converting types, like str to
 IndexError happens when accessing a list with invalid index, like out of range.
 Use try-except to catch invalid index errors when accessing lists
 """
+liste1 = [10,50,30]
+
+number = input("Enter a valid index (0,1 or 2): ")
+
+try:
+    n = int(number)
+    print(liste1[n])
+
+except ValueError:
+    print("Could not be converted to a number")
+except IndexError:
+    print("Index not valid")
+except NameError:
+    print("Variable not defined")
+except ZeroDivisionError:
+    print("Cant divide by zero")
+    
+
 
 #Create a list of names, print, print the length of the list
 
@@ -89,7 +126,7 @@ For example when trying to use a variable not defined yet, or out of scope
 scores = [95, 87, 92, 88]
 
 #Take an index as input from the user, to access the index in the list
-user_index = input("Enter index (0-3) to retrieve score: ")
+#user_index = input("Enter index (0-3) to retrieve score: ")
 
 #try, convert to int, access the list and print the value at index
 #then except, valuerrr, indexerr, 
